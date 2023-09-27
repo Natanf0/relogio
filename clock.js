@@ -399,6 +399,7 @@ function drawClock(place) {
     coord = translate(coord, center);
     context.fillText(n.txt, coord.x, coord.y);
   });
+  
 
   // Draw 24 outer numbers.
   context.font = setFont(clockRadius / 20);
@@ -418,17 +419,17 @@ function drawClock(place) {
  */
 drawClock.romans = [
   { txt: "XII", c: white1 },
-  { txt: "I", c: white1 },
-  { txt: "II", c: white1 },
-  { txt: "III", c: grena },
-  { txt: "IV", c: white1 },
-  { txt: "V", c: white1 },
-  { txt: "VI", c: white1 },
-  { txt: "VII", c: white1 },
-  { txt: " VIII", c: white1 },
-  { txt: "IX", c: grena },
-  { txt: "X", c: white1 },
   { txt: "XI", c: white1 },
+  { txt: "X", c: white1 },
+  { txt: "IX", c: grena },
+  { txt: "VIII", c: white1 },
+  { txt: "VII", c: white1 },
+  { txt: "VI", c: white1 },
+  { txt: "V", c: white1 },
+  { txt: "IV", c: white1 },
+  { txt: "III", c: grena },
+  { txt: "II", c: white1 },
+  { txt: "I", c: white1 },
 ];
 
 /**
@@ -436,7 +437,7 @@ drawClock.romans = [
  * @member {Array<{txt: String, c: color}>} decimal clock numbers.
  */
 drawClock.decimals = Array.from(Array(24), (_, i) => {
-  return { txt: String(i), c: white2 };
+  return { txt: String(24 - i), c: white2 };
 });
 drawClock.decimals[0].txt = "24";
 drawClock.decimals[6].c = white3;
